@@ -1,0 +1,123 @@
+﻿@model IEnumerable<Nordic.Models.Client>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="height:650px">
+    <h1 style="color:white; font-size:100px; text-align:center; padding-top:480px">Bookings</h1>
+</div>
+
+<br />
+
+<p style="text-align:right">
+    @Html.ActionLink("Book a flight", "Create", "Clients", new { @class = "btn btn-default" })
+</p>
+
+<table id="clientsTable" class="table">
+    <thead>
+        <tr>
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.ClientName)
+            </th>
+            @if (User.IsInRole("Administrator"))
+            {
+                <th style="text-align:center">
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th style="text-align:center">
+                    @Html.DisplayNameFor(model => model.Number)
+                </th>
+                <th style="text-align:center">
+                    @Html.DisplayNameFor(model => model.DateOfBirth)
+                </th>
+            }
+    
+            @*<th style="text-align:center">
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>*@
+
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.DateOfDeparture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td style="display:table-cell; vertical-align:middle; text-align:center">
+                @Html.DisplayFor(modelItem => item.ClientName)
+            </td>
+            @if (User.IsInRole("Administrator"))
+            {
+                <td style="display:table-cell; vertical-align:middle; text-align:center">
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td style="display:table-cell; vertical-align:middle; text-align:center">
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td style="display:table-cell; vertical-align:middle; text-align:center">
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+            }
+            <td style="display:table-cell; vertical-align:middle; text-align:center">
+                @Html.DisplayFor(modelItem => item.DateOfDeparture)
+            </td>
+            <td style="display:table-cell; vertical-align:middle; text-align:center">
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ClientId })
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.ClientId })
+                @if (User.IsInRole("Administrator"))
+                {
+                    <button data-client-id="@item.ClientId" class="btn-link js-delete">Delete</button>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+
+@section detailsClients{
+    <style type="text/css">
+        body {
+            background-image: url('../../Content/imgs/flight-crew-01.png');
+            background-size: 1920px 700px;
+            background-repeat: no-repeat;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+    </style>
+}
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $("#clientsTable").DataTable();
+            $("#clientsTable .js-delete").on("click", function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to delete this booking?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/Clients/Delete/" + button.attr("data-client-id"),
+                            method: "GET",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            },
+                            error: function (err) {
+                                console.log(err);
+                            }
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+}

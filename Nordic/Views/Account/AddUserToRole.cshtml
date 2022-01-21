@@ -1,0 +1,35 @@
+﻿@model Nordic.Models.AddUserToRoleModel
+@{
+    ViewBag.Title = "Assigning roles";
+}
+
+
+
+<div style="margin: 100px 220px 200px 220px; background-color: rgba(0, 0, 0, 0.6); display:grid; justify-content:center; color:white; border-radius:10px">
+
+    @using (Html.BeginForm("AddUserToRole", "Account"))
+    {
+        <h3 style="text-align:center; padding-top:10px">Assign roles</h3>
+        <hr/>
+        <div class="form-horizontal" style="width: 500px">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Roles, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.DropDownListFor(model => model.SelectedRole, new SelectList(Model.Roles), new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div style="text-align:right; margin-right: 43px">
+                <button type="submit" class="btn btn-default">Save</button>
+            </div>
+        </div>
+        <br/>
+    }
+</div>

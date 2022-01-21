@@ -1,0 +1,82 @@
+﻿@model Nordic.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row" style="padding-top: 670px; margin-left: 450px">
+    <div class="col-md-7">
+        <h2>@Model.ClientName</h2>
+    </div>
+    <div class="col-md-5" style="text-align:right; padding-top:20px">
+        @if (User.IsInRole("Administrator"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ClientId }, new { @class = "btn btn-default" })
+        }
+        @Html.ActionLink("Pick a destination", "InsertNewDestination", "Clients", new { id = Model.ClientId }, new { @class = "btn btn-default" })
+        @Html.ActionLink("Go back", "Index", "Destinations", new { @class = "btn btn-default" })
+
+    </div>
+</div>
+
+
+
+<div>
+    <hr />
+    <dl class="infor">
+        @if (User.IsInRole("Administrator"))
+        {
+            <div class="col-md-3"><b> Home Address: </b>
+                <br />
+                @Html.DisplayFor(model => model.Address)
+            </div>
+
+            <div class="col-md-3"><b>Phone Number: </b>
+                <br />
+                @Html.DisplayFor(model => model.Number)
+            </div>
+
+            <div class="col-md-3"><b> Date of Birth: </b>
+                <br />
+                @Html.DisplayFor(model => model.DateOfBirth)
+            </div>
+        }
+        <div class="col-md-3"><b> Departure Time: </b>
+            <br />
+            @Html.DisplayFor(model => model.DateOfDeparture)
+        </div>
+    </dl>
+    
+</div>
+
+<br/></br>
+
+<div class="col-md-3">
+    <b> Destination: </b>
+    <br />
+    <ul style="list-style-type:none">
+        @foreach (var destination in Model.Destinations)
+        {
+            <li>
+                <a href="/Destinations/Details/@destination.DestinationId" style="color:black">@destination.DestinationName</a>
+            </li>
+        }
+    </ul>
+</div>
+
+<br/><br /><br />
+
+@section detailsClients{
+    <style type="text/css">
+        body {
+            background-image: url('../../Content/imgs/flight-crew-01.png');
+            background-size: 1920px 700px;
+            background-repeat: no-repeat;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .infor{
+            text-align:center;
+        }
+    </style>
+}

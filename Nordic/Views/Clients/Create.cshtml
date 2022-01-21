@@ -1,0 +1,105 @@
+﻿@model Nordic.Models.Client
+
+@{
+    ViewBag.Title = "Book a flight";
+}
+
+<div style="margin: 100px 220px 110px 220px; background-color: rgba(0, 0, 0, 0.4); display:grid; justify-content:center; color:white; border-radius:10px">
+    <div class="myForm1">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal" style="width: 500px">
+                <h2 style="text-align:center">Where to next?</h2>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ClientName, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.ClientName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ClientName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Number, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DateOfDeparture, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.DateOfDeparture, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DateOfDeparture, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-7 col-md-5">
+                        <br/>
+                        <input type="submit" value="Create" class="btn btn-default" />&nbsp;&nbsp;
+                        @Html.ActionLink("Cancel", "Index", "Clients", new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="row" style="color: white; border: 1px solid lightgrey; border-radius: 5px; background-color: rgba(0, 0, 0, 0.5); padding: 10px ">
+    <div style="width:20px; float:left; padding-top:8px; margin-left:10px; margin-right:10px">
+        <img src="~/Content/imgs/info.png" />
+    </div>
+    <div style="margin-left:10px; margin-right:10px">
+        <h4>Travel Advisory! </h4>
+        <p>
+            With so many customers excited to travel again, we are getting more bookings than usual.
+            Due to the restrictions, we have reduced the number of passengers on a plane.
+            If you do not want to wait, we may be able to help you online. For general assistance,
+            send us an email or contact us by phone.
+            Our team works hard to respond to every message we get from our costumers.
+            We appreciate your patience.
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@section createNewClient{
+    <style type="text/css">
+        body {
+            background-image: url('../../Content/imgs/passengers-2.jpg');
+            background-size: 1920px 700px;
+            background-repeat: no-repeat;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .myForm1 {
+            padding: 30px;
+        }
+    </style>
+}

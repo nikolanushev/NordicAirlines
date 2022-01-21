@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row" style="margin-top:15px; color: white; border: 1px solid lightgrey; border-radius: 5px; background-color: #adacac; padding: 10px ">
+    <div style="width:20px; float:left; padding-top:8px; margin-left:10px; margin-right:10px">
+        <img src="~/Content/imgs/info.png" />
+    </div>
+    <div style="margin-left:10px; margin-right:10px">
+        <h4>Travel Advisory! </h4>
+        <p>
+            With so many customers excited to travel again, we are getting more bookings than usual.
+            Due to the restrictions, we have reduced the number of passengers on a plane.
+            If you do not want to wait, we may be able to help you online. For general assistance,
+            send us an email or contact us by phone.
+            Our team works hard to respond to every message we get from our costumers.
+            We appreciate your patience.
+        </p>
+    </div>
+</div>
+
+<br />
+
+<div class="row" style="margin:100px 100px 170px 100px; font-style: italic; color:white; text-align:center; background-color: rgba(0, 0, 0, 0.6); font-family: 'Book Antiqua'; border-radius: 5px; height:100px">
+    <div style="margin: 20px 0px 20px 0px">
+        <h3>Hello, <br />where will your next adventure be?</h3>
+        <br />
+    </div>
+</div>
+
+<br />
+<br />
+
+<div>
+    <div class="row">
+        <h3 style="margin-top:25px; color:white; font-style:italic; font-family: 'Book Antiqua'">Explore, discover and live the moment with Nordic Airlines</h3>
+        <br /><br />
+        <div class="col-md-6">
+            <div class="thumbnail jumbotron" style="text-align: center; font-family: 'Book Antiqua'">
+                <h3>@Html.ActionLink("Book your next flight", "Create", "Clients", null, new { @style = "color:black" })</h3>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="thumbnail jumbotron" style="text-align: center; font-family: 'Book Antiqua'">
+                <h3>@Html.ActionLink("Take a look at some of the destinations", "Index", "Destinations", null, new { @style = "color:black" })</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <h3 style="font-family: 'Book Antiqua'">Ideas for your next trip</h3>
+    <hr style="border-color:darkgray" />
+    <div class="col-md-4" style="color:white">
+        <div class="thumbnail jumbotron" style="background-image:url('../../Content/imgs/rsz_new-york-2.jpg'); background-size:390px; background-repeat:no-repeat; height:245px">
+            <h2 style="padding-top:150px; text-align:center">New York</h2>
+        </div>
+    </div>
+    <div class="col-md-4" style="color:white">
+        <div class="thumbnail jumbotron" style="background-image:url('../../Content/imgs/rsz_rsz_barcelona-1.jpg'); background-size:390px; background-repeat:no-repeat; height:245px">
+            <h2 style="padding-top:150px; text-align:center">Barcelona</h2>
+
+        </div>
+    </div>
+    <div class="col-md-4" style="color:white">
+        <div class="thumbnail jumbotron" style="background-image:url('../../Content/imgs/rome-1.jpg'); background-size:390px; background-repeat:no-repeat; height:245px">
+            <h2 style="padding-top:150px; text-align:center">Rome</h2>
+        </div>
+    </div>
+    <div class="col-md-4" style="color:white">
+        <div class="thumbnail jumbotron" style="background-image:url('../../Content/imgs/corfu-1.jpg'); background-size:390px; background-repeat:no-repeat; height:150px">
+            <h2 style="padding-top:80px; text-align:center">Corfu</h2>
+        </div>
+    </div>
+    <div class="col-md-4" style="color:white">
+        <div class="thumbnail jumbotron" style="background-image:url('../../Content/imgs/odesa-1.jpg'); background-size:390px; background-repeat:no-repeat; height:150px">
+            <h2 style="padding-top:80px; text-align:center">Odessa</h2>
+        </div>
+    </div>
+    <div class="col-md-4" style="color:white">
+        <div class="thumbnail jumbotron" style="background-image:url('../../Content/imgs/casablanka-1.png'); background-size:390px; background-repeat:no-repeat; height:150px">
+            <h2 style="padding-top:80px; text-align:center">Casablanca</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="thumbnail jumbotron" style="height:180px; background-image:url(../../Content/imgs/booking-2.jpg); background-size: 280px 180px; background-repeat:no-repeat">
+            <h3 style="margin-left:240px">BOOKING.COM</h3>
+            <p style="font-size: 14px; margin-left: 240px">Book your home for the next few days</p>
+            <a href="https://www.booking.com/" style="margin-left:240px">See more..</a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="thumbnail jumbotron" style="height:180px; background-image:url(../../Content/imgs/people-car-4.jpg); background-size: 280px 180px; background-repeat:no-repeat">
+            <h3 style="margin-left:240px">RENTALCARS.COM</h3>
+            <p style="font-size: 14px; margin-left: 240px">Rent a car in any country you want and discover its nature</p>
+            <a href="https://www.rentalcars.com/?affiliateCode=google_brand&preflang=en&label=rentalcars.com-brand-QMBxf9tHoSbRGoWKQmhm3gS262006334289&ws=&ppc_placement=&ppc_target=&ppc_param1=&ppc_param2=&aceid=&adposition=&ppc_network=g&feeditemid=&ppc_targetid=kwd-29977620&loc_physical_ms=9075745&loc_interest_ms=&ppc_device=c&ppc_devicemodel=&gclid=CjwKCAjw87SHBhBiEiwAukSeUbY1oo-U7YbiA6T-B8BapZh5X7yXEILFTnnIJZ73w_ZAPE0zCaDRdxoC91QQAvD_BwE" style="margin-left:240px">See more..</a>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <h4 style="font-family: 'Book Antiqua'"><b>Travel update: COVID-19</b></h4>
+        <hr style="border-color:darkgray" />
+    </div>
+    <div class="col-md-6">
+        <h4 style="font-family: 'Book Antiqua'"><b>Current flight plan</b></h4>
+        <hr style="border-color:darkgray" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="thumbnail jumbotron" style="height:250px; background-image:url(../../Content/imgs/plane-crew-1.jpg); background-size: 560px 250px; background-repeat:no-repeat">
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="thumbnail jumbotron" style="height:250px; background-image:url(../../Content/imgs/plane-crew-2.jpg); background-size: 560px 250px; background-repeat:no-repeat">
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <p>
+            Learn about important updates due to coronavirus, re-opened flight destinations,
+            advantageous flexible change rights and more.
+        </p><br />
+        @Html.ActionLink("Review", "Covid", "Home", new { @class = "btn btn-default" })
+    </div>
+    <div class="col-md-6">
+        <p>
+            We take you to more than 200 destinations on safe, hygienic flights. Explore new places,
+            see loved ones, and enjoy flexible rights if your travel plans change!
+        </p><br />
+        @Html.ActionLink("Review", "FlightPlan", "Home", new { @class = "btn btn-default" })
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="row">
+    <h3 style="font-family: 'Book Antiqua'"><b>Tips on buying flight tickets through Nordic Airlines</b></h3>
+    <hr style="border-color:darkgray" />
+    <div class="col-md-6">
+        <h4>How far ahead should you book a flight?</h4>
+        <p>
+            According to the global flight data from 2019, the best period to buy a ticket is 21 days
+            prior to the departure. But also keeping an eye about the ticket prices is a good idea
+            in order to find the best possible and suitable deal.
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h4>What day of the week is the best to buy a ticket on Nordic Airlines?</h4>
+        <p>
+            The best day to buy a ticket on discount is every Sunday, when there is no need to enter
+            a special code in order to get a discount. The discount is immediately being calculated when
+            picking the wanted destination.
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h4>How can I find a last-minute flight?</h4>
+        <p>
+            When you're looking for that perfect last-minute getaway, all you have to do is check out the available
+            deals at Expedia. These deals will show up in green above the final price per night for hotel offerings,
+            highlighting how much you'll save when you book for any time in the next two weeks.
+        </p>
+    </div>
+
+    <div class="col-md-6">
+        <h4>How can I get the booked flight ticket?</h4>
+        <p>
+            Every time you book a flight via Nordic Airlines, it is automatically sent to your provided email address.
+            This way you can download it on your computer and print it if you want, or you can just download it on your
+            smartphone and use it directly from there, this way you won't need to print it.
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h4>How can I get a cheap last-minute flight?</h4>
+        <p>
+            For travelers who want to get the most affordable last-minute hotel room possible, flexibility matters
+            most. If you can be more flexible regarding the exact dates you want to travel, as well as the
+            destination itself, you'll have a better time finding the best deals.
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h4>How can I save money on flights?</h4>
+        <p>
+            Buying a ticket long time prior departure can help you save money. That way you may find a ticket
+            for your wanted destination on a quite low price.
+        </p>
+    </div>
+</div>
+
+
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('../../Content/imgs/airport-1.jpg');
+            background-size: 1915px 700px;
+            background-repeat: no-repeat;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+    </style>
+}
